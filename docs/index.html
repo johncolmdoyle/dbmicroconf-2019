@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+                <link rel="stylesheet" href="css/theme/silbo.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                                <section>
+                                        <h3>Securely Controlling Access to RDS</h3>
+                                        <p>
+                                                <small>Presented by <a href="https://johndoyle.ie">John Doyle</a></small>
+                                        </p>
+                                </section>
+
+				<section>
+					<h4>3 Tier Architecture</h4>
+					<aside class="notes">The general architecture we talk about, 3 tier.. introduction for many to public and private subnets. Locking down database access... but not explaining how users securily connect vs applications</aside>
+					<img class="plain" src="image/DB_MicroConf_Diagrams-3_Tier_Architecture.png" />
+				</section>
+
+                                <section>
+                                        <h4>3 Tier Architecture</h4>
+                                        <aside class="notes">So people get stressed and end up making their private subnet public so that they can correct data or run ad-hoc queries.</aside>
+                                        <img class="plain" src="image/DB_MicroConf_Diagrams-DB_to_Public_Subnet.png" />
+                                </section>
+
+                                <section>
+                                        <h4>Bastion Host</h4>
+                                        <aside class="notes">We want to keep the database in a private subnet, but allow users to still connect. This requires running a Bastion host, locking it down to only permitting access to our specified databases, and use SSH keys to govern access.</aside>
+                                        <img class="plain" src="image/DB_MicroConf_Diagrams-DB_Bastion_Connection.png" />
+                                </section>
+
+                                <section>
+					<h4>Bastion Demo</h4>
+<pre><code class="hljs" data-trim>
+git checkout terraform-bastion;
+cd terraform;
+terraform plan;
+terraform apply;
+                                        </code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                                transition: 'convex',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

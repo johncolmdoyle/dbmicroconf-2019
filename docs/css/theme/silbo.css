@@ -1,0 +1,10 @@
+/*********************************************
+ * SILBO STYLES
+ *********************************************/
+.reveal .slide-background-content {
+  background-image: url('../../image/silbo-logo.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top left;
+  background-size: 250px;
+}

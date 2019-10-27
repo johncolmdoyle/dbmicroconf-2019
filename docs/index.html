@@ -66,6 +66,38 @@ terraform apply;
                                         <aside class="notes">NIST and even Microsoft have updated their policies to not recommend Password Expiration.</aside>
                                         <img class="plain" src="image/DB_MicroConf_Diagrams-Password_Rotation.png" />
                                 </section>
+
+				<section>
+                                        <h4>Password Rotation</h4>
+                                        <aside class="notes">By enforcing MFA on the user's account, we verify the user has access to the password which is a far more secure system of disclosing the password.</aside>
+                                        <img class="plain" src="image/DB_MicroConf_Diagrams-Request_Password" />
+                                </section>
+
+                                <section>
+                                        <h4>Password Rotation Demo</h4>
+<pre><code class="hljs" data-trim>
+git checkout terraform-password-rotation;
+cd terraform;
+terraform plan;
+terraform apply;
+                                        </code></pre>
+                                </section>
+
+                                <section>
+                                        <h4>IAM Authentication</h4>
+                                        <aside class="notes">The best option is to centralize per-IAM User database credentials with short passwords issued.</aside>
+                                        <img class="plain" src="image/DB_MicroConf_Diagrams-IAM_Authentication.png" />
+                                </section>
+
+                                <section>
+                                        <h4>IAM Authentication</h4>
+<pre><code class="hljs" data-trim>
+git checkout terraform-iam-authentication;
+cd terraform;
+terraform plan;
+terraform apply;
+                                        </code></pre>
+                                </section>
 			</div>
 		</div>
 

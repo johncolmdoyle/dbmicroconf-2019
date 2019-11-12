@@ -1,0 +1,1 @@
+ssh -i ~/.ssh/microconf -NL 5432:microconf-bastion.crd9dvfeqlcl.us-east-1.rds.amazonaws.com:5432 ec2-user@18.209.109.205 -v

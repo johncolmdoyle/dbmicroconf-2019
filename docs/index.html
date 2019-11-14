@@ -46,20 +46,16 @@
                                 </section>
 
                                 <section>
+                                        <h4>Session Manager</h4>
+                                        <aside class="notes">Lock down an instance privately that is granted access to the database and is properly audited.</aside>
+                                        <img class="plain" src="image/DB_MicroConf_Diagrams-Session_Manager.png" />
+                                </section>
+
+                                <section>
                                         <h4>Bastion Host</h4>
                                         <aside class="notes">We want to keep the database in a private subnet, but allow users to still connect. This requires running a Bastion host, locking it down to only permitting access to our specified databases, and use SSH keys to govern access.</aside>
                                         <img class="plain" src="image/DB_MicroConf_Diagrams-DB_Bastion_Connection.png" />
                                 </section>
-
-                                <section>
-					<h4>Bastion Demo</h4>
-<pre><code class="hljs" data-trim>
-git checkout terraform-bastion;
-cd terraform;
-terraform plan;
-terraform apply;
-                                        </code></pre>
-				</section>
 
                                 <section>
                                         <h4>Password Rotation</h4>
@@ -74,29 +70,9 @@ terraform apply;
                                 </section>
 
                                 <section>
-                                        <h4>Password Rotation Demo</h4>
-<pre><code class="hljs" data-trim>
-git checkout terraform-password-rotation;
-cd terraform;
-terraform plan;
-terraform apply;
-                                        </code></pre>
-                                </section>
-
-                                <section>
                                         <h4>IAM Authentication</h4>
                                         <aside class="notes">The best option is to centralize per-IAM User database credentials with short passwords issued.</aside>
                                         <img class="plain" src="image/DB_MicroConf_Diagrams-IAM_Authentication.png" />
-                                </section>
-
-                                <section>
-                                        <h4>IAM Authentication Demo</h4>
-<pre><code class="hljs" data-trim>
-git checkout terraform-iam-authentication;
-cd terraform;
-terraform plan;
-terraform apply;
-                                        </code></pre>
                                 </section>
 
 				<section>
